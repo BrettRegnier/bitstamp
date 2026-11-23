@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bitmap-to-c-array"
+version = "0.1.0"
+description = "Convert images into packed monochrome C arrays or C++ constexpr classes"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+keywords = ["bitmap", "image", "embedded", "monochrome", "c", "cpp"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Multimedia :: Graphics :: Graphics Conversion",
+    "Topic :: Software Development :: Embedded Systems",
+]
+dependencies = ["Pillow>=10.0"]
+
+[project.optional-dependencies]
+dev = ["build>=1.2", "twine>=6.0"]
+
+[project.scripts]
+bitmap-to-c-array = "bitmap_to_c_array.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
